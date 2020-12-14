@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+
+    <TextView
+        android:id="@+id/brukerNavn"
+        android:layout_width="202dp"
+        android:layout_height="47dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:ignore="MissingConstraints" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="325dp"
+        android:layout_height="195dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/bilde"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brukerNavn"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingClass,MissingConstraints" />
+
+    <Button
+        android:id="@+id/knapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/vis_info"
+        app:layout_constraintBottom_toTopOf="@+id/alder_bald"
+        app:layout_constraintEnd_toStartOf="@+id/Editinfo"
+        app:layout_constraintTop_toTopOf="@+id/Editinfo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/alder_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/alder_bald"
+        app:layout_constraintStart_toStartOf="@+id/alder_bald"
+        app:layout_constraintTop_toBottomOf="@+id/alder_bald" />
+
+    <TextView
+        android:id="@+id/bosted_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/bosted_bald"
+        app:layout_constraintStart_toStartOf="@+id/bosted_bald"
+        app:layout_constraintTop_toBottomOf="@+id/bosted_bald" />
+
+    <TextView
+        android:id="@+id/description_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/description_bald"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="@+id/description_bald"
+        app:layout_constraintTop_toBottomOf="@+id/description_bald" />
+
+    <TextView
+        android:id="@+id/alder_bald"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <TextView
+        android:id="@+id/bosted_bald"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/alder_user"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="@+id/alder_user"
+        app:layout_constraintTop_toBottomOf="@+id/alder_user" />
+
+    <TextView
+        android:id="@+id/description_bald"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/bosted_user"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/bosted_user"
+        app:layout_constraintTop_toBottomOf="@+id/bosted_user" />
+
+    <Button
+        android:id="@+id/userBildeBytte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:onClick="changeUserProfilePicture"
+        android:text="@string/bytt_profilbilde"
+        app:layout_constraintBottom_toBottomOf="@+id/Editinfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Editinfo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/hideText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skjul_innhold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/Editinfo"
+        app:layout_constraintEnd_toEndOf="@+id/knapp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Editinfo"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/Editinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <EditText
+        android:id="@+id/editAlder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/skriv_inn_nsket_alder"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/bosted_bald"
+        app:layout_constraintEnd_toEndOf="@+id/alder_bald"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/alder_bald"
+        app:layout_constraintTop_toTopOf="@+id/alder_user"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editBosted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/skriv_inn_nsket_bosted"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/description_bald"
+        app:layout_constraintEnd_toEndOf="@+id/bosted_bald"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/bosted_bald"
+        app:layout_constraintTop_toTopOf="@+id/bosted_user"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/skriv_inn_nsket_informasjon_om_deg"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/description_bald"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/description_bald"
+        app:layout_constraintTop_toBottomOf="@+id/description_bald"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/godtaEditInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/godta"
+        android:textColor="@android:color/white"
+        android:textSize="8sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/editBosted"
+        app:layout_constraintTop_toTopOf="@+id/bosted_user" />
+
+    <Button
+        android:id="@+id/kanselerEditInformasjon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@android:color/holo_red_light"
+        android:onClick="sammeInformasjon"
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        android:textSize="8sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/editBosted"
+        app:layout_constraintTop_toTopOf="@+id/bosted_user" />
+
+    <Button
+        android:id="@+id/logOut"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="98dp"
+        android:layout_height="49dp"
+        android:text="@string/log_out"
+        android:textColor="#177FA6"
+        android:textColorHighlight="#E41C1C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/brukerNavn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
